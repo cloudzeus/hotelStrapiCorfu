@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "facility_categories",
+  "info": {
+    "singularName": "facility-category",
+    "pluralName": "facility-categories",
+    "displayName": "Facility Category"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "translate": {
+          "translate": "translate"
+        }
+      },
+      "type": "string"
+    },
+    "hotel_facility": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::hotel-facility.hotel-facility",
+      "inversedBy": "facility_categories"
+    },
+    "rooms_facility": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::rooms-facility.rooms-facility",
+      "inversedBy": "facility_categories"
+    }
+  }
+}

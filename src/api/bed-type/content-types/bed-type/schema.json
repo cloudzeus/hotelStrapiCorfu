@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bed_types",
+  "info": {
+    "singularName": "bed-type",
+    "pluralName": "bed-types",
+    "displayName": "bed type"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "translate": {
+          "translate": "translate"
+        }
+      },
+      "type": "string"
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        },
+        "translate": {
+          "translate": "translate"
+        }
+      },
+      "type": "text"
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "targetField": "name"
+    },
+    "room_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::room-type.room-type",
+      "inversedBy": "bed_types"
+    }
+  }
+}
